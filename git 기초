@@ -17,3 +17,18 @@ mkdir test (테스트 디렉토리만들기)
 cd test (테스트 디렉토리로 들어가기)
 touch a.txt (a 텍스트 파일만들기)
 code . (bash비주얼 스튜디오로 들어가기)
+
+===========================================================
+
+좌측 파일 클릭해서 이것저것 입력 후에 ctrl + s
+git add .
+git commit -m 'root commit'
+
+git init
+git remote add origin(깃허브 주소)
+git remote -v
+-> 원격 저장소 조회
+fetch랑 push가 같은지 확인하기
+
+git push origin master
+→ 깃 허브로 내보내기
