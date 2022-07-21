@@ -135,8 +135,43 @@ print(get_secret_word(list_word))
 
 # 6. 내 이름은 몇일까?
 
-word = 'happy'
+print(ord("h"), type(ord("h")))
 
+def get_secret_number(word):
+    words = list(word) #['h', 'a', 'p', 'p', 'y']
+    sum_word = int()
+    for i in range(len(words)):
+        sum_word += ord(words[i])
+    return sum_word
+
+print(get_secret_number('happy'))
+
+# 7. 강한 이름
+
+def get_strong_word(a, b):
+
+    A = list(a)
+    B = list(b)
+
+    sum_A = int()
+    sum_B = int()
+    
+    for i in range(len(A)):
+        sum_A += ord(A[i])
+
+    for i in range(len(B)):
+        sum_B += ord(B[i])
+    
+
+    if sum_A == sum_B:
+        return a, b
+    elif sum_A > sum_B:
+        return a
+    else:
+        return b
+    
+
+print(get_strong_word('dixon', 'delilah'))
 
 
 
