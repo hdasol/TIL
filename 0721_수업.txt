@@ -1,0 +1,36 @@
+>>> not None
+True
+>>> not 1
+False
+>>> not []
+True
+>>> not 3
+False
+>>> not 3 is None
+True
+
+>>> cards = [8, 3, 2, 8, 1, 8]
+>>> for idx in range(len(cards)):
+	print(cards[idx])
+
+	
+8
+3
+2
+8
+1
+8
+---------------------------------
+>>> 's' in 'houses'
+True
+>>> 'id' in 'my id'
+True
+>>> 5 in {1, 2, 3, 4, 5, 6} -> set
+True
+
+####### [] 이거랑 list() 랑 뭐가 다름?????
+nums = [(map(int, input().split()))]
+print(nums)
+nums2 = list()
+
+
