@@ -1,0 +1,30 @@
+pprint() -> 세로로 보기 힘든 데이터를 가로로 출력하게 해주는 것.
+json
+
+##### 딕셔너리 #####
+
+>>> a = {'name':'mulcam', 'age':5, 'address':'역삼'}
+>>> a[name]
+Traceback (most recent call last):
+  File "<pyshell#1>", line 1, in <module>
+    a[name]
+NameError: name 'name' is not defined
+>>> name = 'name'
+>>> a[name]
+'mulcam'
+
+
+>>> a = {'name':'mulcam'}
+>>> a.get(name)
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    a.get(name)
+NameError: name 'name' is not defined
+>>> a.get('name')
+'mulcam'
+>>> a.get('address')
+>>> print(a.get('address'))
+None
+
+get 함수는 찾는 값이 없을 때 None을 반환한다!!!! 반환값이 있다!!! get은 오류가 잘 안나!!!
+get은 없으면 반환할 값을 지정할 수도 있다!
