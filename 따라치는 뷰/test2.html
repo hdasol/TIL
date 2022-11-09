@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div class="app">
+    <h3>성 입력: {{ lastName }}</h3>
+    <!-- 단방향 바인딩 -->
+    <!-- onInput은 커스텀할 수 있는 여지가 많다! -->
+    <input type="text" v-on:input="onInput">
+
+    <h3>이름 입력: {{ firstName }}</h3>
+    <!-- 양반향 바인딩 -->
+    <!-- 그냥 바인딩만 가능하고 커스텀할 여지는 없음! 심플한 사용법 -->
+    <input type="text" v-model="firstName">
+    <h3> methods 결과 : {{ getFullName() }}</h3>
+    <h3> computed 결과 : {{ combined }}</h3>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const obj = {
+      el: '.app',
+      data: {
+        lastName: '',
+        firstName: '',
+      },
+      methods: {
+        onInput(event) {
+          // this.firstName = event.target.value
+          this.lastName = event.target.value
+          // this는 분홍색 괄호를 가르키는게 맞는데, 실질은 노란색 const obj 괄호를 가르키게 된다.
+        },
+        getFullName() {
+          return this.lastName + this.firstName
+        }
+      },
+      computed: {
+        combined() {
+          return this.lastName + this.firstName
+          // 어떤 값으로 쓰려고 하나의 단어로 묶는 작업임, 
+        }
+      },
+      watch: {
+        firstName: function () {
+          console.log('전혀 다른 로직을 실행')
+        }
+      }
+    }
+
+    const app = new Vue(obj)
+
+  </script>
+</body>
+
+</html>
